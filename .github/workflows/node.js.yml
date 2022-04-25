@@ -10,15 +10,10 @@ jobs:
   post:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v2
       - name: Update Search Index
-        uses: hmu332233/issue-search@v1
+        uses: hmu332233/issue-search/.github/actions/update-search-index@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ALGOLIA_ID: ${{ secrets.ALGOLIA_ID }}

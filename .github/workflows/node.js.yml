@@ -12,8 +12,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          repository: hmu332233/issues-search
+          path: issues-search
       - name: Update Search Index
-        uses: hmu332233/issues-search/.github/actions/update-search-index@v1
+        uses: ./issues-search/.github/actions/update-search-index
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ALGOLIA_ID: ${{ secrets.ALGOLIA_ID }}
